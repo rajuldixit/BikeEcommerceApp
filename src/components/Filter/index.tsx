@@ -15,8 +15,8 @@ import { FilterTypes } from "../../utils/types";
 const Filters = () => {
   return (
     <Stack p={2}>
-      {filterOptions.map((option) => (
-        <Accordion sx={{ marginBottom: "10px" }}>
+      {filterOptions.map((option, idx) => (
+        <Accordion sx={{ marginBottom: "10px" }} key={idx}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2-content"
@@ -28,7 +28,7 @@ const Filters = () => {
             {option.type == FilterTypes.LIST &&
               option.subOptions &&
               option.subOptions.map((subOption) => (
-                <Typography sx={{ cursor: "pointer" }}>
+                <Typography sx={{ cursor: "pointer" }} key={subOption.key}>
                   {subOption.value}
                 </Typography>
               ))}
