@@ -11,6 +11,7 @@ import {
   Stack
 } from "@mui/material";
 import Buttons, { IButtonTypes } from "../Buttons";
+import useCartHandler from "../../hooks/useCartHandler";
 
 interface IProductCard {
   product: IProduct;
@@ -19,9 +20,14 @@ const ProductCard: React.FC<IProductCard> = (props: IProductCard) => {
   const { bikeType, description, id, imageUrl, name, price, ratings } =
     props.product;
 
+  const { addRemoveFromCart } = useCartHandler();
   const imgPath = (url: string) => {
     return require(`../../assets/images/${url}`);
   };
+  const addToCart = (product: IProduct) => {
+    addRemoveFromCart(product);
+  };
+
   return (
     <Card sx={{ maxWidth: 260 }}>
       <CardMedia
@@ -48,9 +54,7 @@ const ProductCard: React.FC<IProductCard> = (props: IProductCard) => {
         <Buttons
           type={IButtonTypes.PRIMARY}
           label={"Add"}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          onClick={() => addToCart(props.product)}
         ></Buttons>
       </CardActions>
     </Card>

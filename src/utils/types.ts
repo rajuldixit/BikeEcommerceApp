@@ -61,3 +61,8 @@ export interface IProduct {
   ratings: number;
   bikeType: string;
 }
+
+export interface IUserLogin {
+  email: string;
+  password: string;
+}

@@ -1,6 +1,8 @@
 import { Badge, BadgeProps, IconButton, styled } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAppState } from "../../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -12,9 +14,18 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 }));
 
 const ShoppingCart = () => {
+  const [cartSize, setCartSize] = useState(0);
+  const appState = useAppState();
+  const navigate = useNavigate();
+  const checkout = () => {
+    navigate("/checkout");
+  };
+  useEffect(() => {
+    setCartSize(appState.cart.length);
+  }, [appState.cart.length]);
   return (
-    <IconButton aria-label="cart">
-      <StyledBadge badgeContent={4} color="secondary">
+    <IconButton aria-label="cart" onClick={checkout}>
+      <StyledBadge badgeContent={cartSize} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>

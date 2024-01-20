@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, ButtonProps, styled } from "@mui/material";
+import { Button, ButtonProps, Typography, styled } from "@mui/material";
 
 interface IButtonProps {
   type: string;
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 export enum IButtonTypes {
   PRIMARY = "PRIMARY",
@@ -32,6 +32,9 @@ const ColorOutlinedButton = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: "white"
   }
 }));
+const ColorTextButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  textTransform: "none"
+}));
 const Buttons: React.FC<IButtonProps> = (props: IButtonProps) => {
   const { type, label, onClick } = props;
   return (
@@ -45,6 +48,17 @@ const Buttons: React.FC<IButtonProps> = (props: IButtonProps) => {
         <ColorOutlinedButton variant="contained" onClick={onClick}>
           {label}
         </ColorOutlinedButton>
+      )}
+      {type === IButtonTypes.TEXT && (
+        <ColorTextButton
+          onClick={onClick}
+          variant="text"
+          sx={{ color: "#15C421" }}
+        >
+          <Typography ml={1} mr={1}>
+            {label}
+          </Typography>
+        </ColorTextButton>
       )}
     </>
   );
