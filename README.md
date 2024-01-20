@@ -13,7 +13,7 @@
 ##### 1. Material UI for styling
 
 ## Steps to run
-##### git clone 
+##### git clone https://github.com/rajuldixit/BikeEcommerceApp.git
 ##### cd BikeEcommerceApp
 ##### npm install
 ##### npm start
