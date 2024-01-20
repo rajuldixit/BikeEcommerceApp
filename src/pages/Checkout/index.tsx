@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useAppState } from "../../context/AppContext";
 import { IProduct } from "../../utils/types";
-import { Container, Paper, Stack } from "@mui/material";
+import { Container, Grid, Paper, Stack } from "@mui/material";
 import Buttons, { IButtonTypes } from "../../components/Buttons";
 import { useNavigate } from "react-router-dom";
 import CustomerDetailsForm from "../../components/CustomerDetailsForm";
 import useOrdersHandler from "../../hooks/useOrdersHandler";
 import { ICustomer, IOrder } from "../../context/AppReducer";
+import ProductCard from "../../components/Cards";
 
 const Checkout = () => {
   const appState = useAppState();
@@ -17,13 +18,11 @@ const Checkout = () => {
     navigate("/");
   };
   const placeOrder = async (customerDetails: ICustomer) => {
-    console.log(customerDetails);
     const orderObject: IOrder = {
-      orderId: Math.random(),
+      orderId: Math.floor(Math.random() * 100),
       product: appState.cart,
       customer: customerDetails
     };
-    console.log(orderObject);
     const resp = await saveOrder(orderObject);
     if (resp) {
       setOpen(false);
@@ -45,12 +44,26 @@ const Checkout = () => {
         label={"Back"}
         onClick={goBack}
       ></Buttons>
-      {appState.cart &&
-        appState.cart.map((item: IProduct) => (
-          <Paper sx={{ margin: "10px 0", padding: "8px 10px" }}>
-            {item.name}
-          </Paper>
-        ))}
+      <Paper
+        elevation={0}
+        sx={{
+          marginY: "20px",
+          padding: "20px",
+          height: "60vh",
+          overflowY: "scroll"
+        }}
+      >
+        {/* <Stack sx={{ height: "80vh", overflowY: "scroll" }} p={2}></Stack> */}
+        <Grid container spacing={2}>
+          {appState.cart &&
+            appState.cart.map((product: IProduct) => (
+              <Grid item xs={12} sm={4} lg={3} key={product.id}>
+                <ProductCard product={product}></ProductCard>
+              </Grid>
+            ))}
+        </Grid>
+      </Paper>
+
       <Stack flexDirection={"row"} justifyContent={"end"}>
         <Buttons
           type={IButtonTypes.PRIMARY}

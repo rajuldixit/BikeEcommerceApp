@@ -10,11 +10,11 @@ const Landing = () => {
       <Stack>
         <Header></Header>
         <Paper elevation={0}>
-          <Stack flexDirection={"row"} p={2}>
-            <Box sx={{ width: "20%" }}>
+          <Stack flexDirection={{ xs: "column", md: "row" }} p={2}>
+            <Box sx={{ width: { xs: "100%", md: "20%" } }}>
               <Filter></Filter>
             </Box>
-            <Box sx={{ width: "80%" }}>
+            <Box sx={{ width: { xs: "100%", md: "80%" } }}>
               <Products></Products>
             </Box>
           </Stack>

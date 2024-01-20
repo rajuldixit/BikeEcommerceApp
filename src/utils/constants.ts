@@ -77,7 +77,7 @@ export const products: IProduct[] = [
     name: "Bike Electric 1",
     imageUrl: "electric_bikes/Image1LQ_00000_x800.webp",
     description:
-      "An electric bike, is a bicycle equipped with an motor to assist you when you're pedalling.",
+      "An electric bike, is a bicycle equipped with an motor to assist you .",
     price: 1000,
     ratings: 4,
     bikeType: IBikeTypes.ELECTRIC
@@ -104,3 +104,7 @@ export const products: IProduct[] = [
     bikeType: IBikeTypes.FOLDABLE
   }
 ];
+
+export const appColors = {
+  primaryColor: "#15C421"
+};

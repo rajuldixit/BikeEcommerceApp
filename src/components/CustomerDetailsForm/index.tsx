@@ -32,7 +32,6 @@ const CustomerDetailsForm: React.FC<ICustomerDetails> = ({
   } = useForm<ICustomer>();
 
   const onSubmit = handleSubmit(async (customerData: ICustomer) => {
-    debugger;
     placeOrder(customerData);
   });
 
@@ -45,7 +44,7 @@ const CustomerDetailsForm: React.FC<ICustomerDetails> = ({
         </DialogContentText>
       </DialogContent>
       <form onSubmit={onSubmit}>
-        <Stack p={2}>
+        <Stack p={2} flexDirection={"row"}>
           <TextField
             data-cy="fname-field"
             required
@@ -61,9 +60,10 @@ const CustomerDetailsForm: React.FC<ICustomerDetails> = ({
             label="Last Name"
             defaultValue=""
             {...register("lastname")}
+            sx={{ marginLeft: "8px" }}
           />
         </Stack>
-        <Stack p={2}>
+        <Stack p={2} flexDirection={"row"}>
           <TextField
             data-cy="email-field"
             required
@@ -79,9 +79,10 @@ const CustomerDetailsForm: React.FC<ICustomerDetails> = ({
             label="Phone"
             defaultValue=""
             {...register("phone")}
+            sx={{ marginLeft: "8px" }}
           />
         </Stack>
-        <Stack p={2}>
+        <Stack p={2} flexDirection={"row"}>
           <TextField
             data-cy="address-field"
             required
@@ -91,6 +92,7 @@ const CustomerDetailsForm: React.FC<ICustomerDetails> = ({
             {...register("address")}
           />
           <TextField
+            sx={{ marginLeft: "8px" }}
             required
             data-cy="paymentMode-field"
             type="text"
@@ -99,12 +101,16 @@ const CustomerDetailsForm: React.FC<ICustomerDetails> = ({
             {...register("paymentMode")}
           />
         </Stack>
-        <Buttons
-          type={IButtonTypes.SECONDARY}
-          label={"Cancel"}
-          onClick={handleClose}
-        ></Buttons>
-        <Button type="submit">Submit</Button>
+        <Stack p={2} flexDirection={"row"} justifyContent={"end"}>
+          <Buttons
+            type={IButtonTypes.SECONDARY}
+            label={"Cancel"}
+            onClick={handleClose}
+          ></Buttons>
+          <Button type="submit" variant="contained" sx={{ marginLeft: "8px" }}>
+            Submit
+          </Button>
+        </Stack>
       </form>
       <DialogActions></DialogActions>
     </Dialog>

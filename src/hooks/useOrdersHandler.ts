@@ -16,6 +16,13 @@ const useOrdersHandler = () => {
         orders: placedOrders
       }
     });
+    dispatch({
+      type: Types.AddToCart,
+      payload: {
+        ...initialState,
+        cart: new Array()
+      }
+    });
     return true;
   };
   return { saveOrder };

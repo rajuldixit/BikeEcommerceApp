@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, ButtonProps, Typography, styled } from "@mui/material";
+import { appColors } from "../../utils/constants";
 
 interface IButtonProps {
   type: string;
@@ -15,20 +16,20 @@ export enum IButtonTypes {
 const ColorContainedButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: "white",
   textTransform: "none",
-  backgroundColor: "#15C421",
+  backgroundColor: appColors.primaryColor,
   "&:hover": {
-    backgroundColor: "#15C421"
+    backgroundColor: appColors.primaryColor
   }
 }));
 
 const ColorOutlinedButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: "#15C421",
-  borderColor: "#15C421",
+  color: appColors.primaryColor,
+  borderColor: appColors.primaryColor,
   backgroundColor: "white",
   textTransform: "none",
   "&:hover": {
-    color: "#15C421",
-    borderColor: "#15C421",
+    color: appColors.primaryColor,
+    borderColor: appColors.primaryColor,
     backgroundColor: "white"
   }
 }));
@@ -45,7 +46,7 @@ const Buttons: React.FC<IButtonProps> = (props: IButtonProps) => {
         </ColorContainedButton>
       )}
       {type == IButtonTypes.SECONDARY && (
-        <ColorOutlinedButton variant="contained" onClick={onClick}>
+        <ColorOutlinedButton variant="outlined" onClick={onClick}>
           {label}
         </ColorOutlinedButton>
       )}
@@ -53,7 +54,7 @@ const Buttons: React.FC<IButtonProps> = (props: IButtonProps) => {
         <ColorTextButton
           onClick={onClick}
           variant="text"
-          sx={{ color: "#15C421" }}
+          sx={{ color: appColors.primaryColor }}
         >
           <Typography ml={1} mr={1}>
             {label}
