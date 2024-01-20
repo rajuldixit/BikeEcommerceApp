@@ -2,21 +2,21 @@
 
 ## Overview
 
-### This is a Bike ecommerce app where you can view and select bikes, also you can place the order as a guest user. If you are an admin, you can sign in and check the orders placed by customers.
+#### This is a Bike ecommerce app where you can view and select bikes, also you can place the order as a guest user. If you are an admin, you can sign in and check the orders placed by customers.
 
 ## Tech Stack
 
-#### 1. React js, 2. Typescript
+##### 1. React js, 2. Typescript
 
 ## Dependencies
 
-#### 1. Material UI for styling
+##### 1. Material UI for styling
 
 ## Steps to run
-#### git clone 
-#### cd BikeEcommerceApp
-#### npm install
-#### npm start
+##### git clone 
+##### cd BikeEcommerceApp
+##### npm install
+##### npm start
 
 ## Screenshots
 ![image](https://github.com/rajuldixit/BikeEcommerceApp/assets/17043105/e53cd4f1-539d-48b6-b2e7-28988df3cc14)
