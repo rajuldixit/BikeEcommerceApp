@@ -57,3 +57,5 @@
 ![image](https://github.com/rajuldixit/BikeEcommerceApp/assets/17043105/c484e925-3516-43b4-9a08-eefd3b81394c)
 ![image](https://github.com/rajuldixit/BikeEcommerceApp/assets/17043105/44ce78e5-9735-4e24-a33b-27b3ee9e4e07)
 ![image](https://github.com/rajuldixit/BikeEcommerceApp/assets/17043105/0ac081fd-0873-494c-92ee-b12bedc704ce)
+![image](https://github.com/rajuldixit/BikeEcommerceApp/assets/17043105/2e63c18d-f90f-4c7e-9fe1-a6210a03fe33)
+
