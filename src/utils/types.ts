@@ -22,34 +22,36 @@ export const PriceRange: ISubOptions[] = [
     max: 5000
   }
 ];
-export const BikeTypes: ISubOptions[] = [
-  {
-    key: "MOUNTAIN",
-    value: "Mountain Bikes"
-  },
-  {
-    key: "CRUISER",
-    value: "Cruiser Bikes"
-  },
-  {
-    key: "ELECTRIC",
-    value: "Electric Bikes"
-  },
-  {
-    key: "FOLDABLE",
-    value: "Foldable Bikes"
-  }
-];
 export enum IBikeTypes {
   MOUNTAIN = "Mountain Bikes",
   CRUISER = "Cruiser Bikes",
   ELECTRIC = "Electric Bikes",
   FOLDABLE = "Foldable Bikes"
 }
+export const BikeTypes: ISubOptions[] = [
+  {
+    key: "MOUNTAIN",
+    value: IBikeTypes.MOUNTAIN
+  },
+  {
+    key: "CRUISER",
+    value: IBikeTypes.CRUISER
+  },
+  {
+    key: "ELECTRIC",
+    value: IBikeTypes.ELECTRIC
+  },
+  {
+    key: "FOLDABLE",
+    value: IBikeTypes.FOLDABLE
+  }
+];
+
 export interface IFilter {
   name: string;
   type: string;
   subOptions: ISubOptions[];
+  key: string;
 }
 
 export interface IProduct {
@@ -60,6 +62,7 @@ export interface IProduct {
   price: number;
   ratings: number;
   bikeType: string;
+  priceRange?: string;
 }
 
 export interface IUserLogin {

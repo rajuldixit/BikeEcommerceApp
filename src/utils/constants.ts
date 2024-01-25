@@ -11,12 +11,14 @@ export const filterOptions: IFilter[] = [
   {
     name: "Types",
     type: FilterTypes.LIST,
-    subOptions: BikeTypes
+    subOptions: BikeTypes,
+    key: "bikeType"
   },
   {
     name: "Price",
     type: FilterTypes.LIST,
-    subOptions: PriceRange
+    subOptions: PriceRange,
+    key: "priceRange"
   }
 ];
 
@@ -29,7 +31,8 @@ export const products: IProduct[] = [
       "A mountain bike (MTB) or mountain bicycle is a bicycle designed for off-road cycling.",
     price: 1000,
     ratings: 4,
-    bikeType: IBikeTypes.MOUNTAIN
+    bikeType: IBikeTypes.MOUNTAIN,
+    priceRange: PriceRange[1].value
   },
   {
     id: "2",
@@ -37,9 +40,10 @@ export const products: IProduct[] = [
     imageUrl: "mountain_bikes/House-of-solid-gold.jpg",
     description:
       "A mountain bike (MTB) or mountain bicycle is a bicycle designed for off-road cycling.",
-    price: 1000,
+    price: 1500,
     ratings: 5,
-    bikeType: IBikeTypes.MOUNTAIN
+    bikeType: IBikeTypes.MOUNTAIN,
+    priceRange: PriceRange[1].value
   },
   {
     id: "3",
@@ -49,7 +53,8 @@ export const products: IProduct[] = [
       "A mountain bike (MTB) or mountain bicycle is a bicycle designed for off-road cycling.",
     price: 1000,
     ratings: 3,
-    bikeType: IBikeTypes.MOUNTAIN
+    bikeType: IBikeTypes.MOUNTAIN,
+    priceRange: PriceRange[1].value
   },
   {
     id: "4",
@@ -59,7 +64,8 @@ export const products: IProduct[] = [
       "A cruiser bicycle, also known as a beach cruiser or (formerly) motobike",
     price: 1000,
     ratings: 4,
-    bikeType: IBikeTypes.CRUISER
+    bikeType: IBikeTypes.CRUISER,
+    priceRange: PriceRange[1].value
   },
   {
     id: "5",
@@ -67,9 +73,10 @@ export const products: IProduct[] = [
     imageUrl: "cruiser_bikes/Top10CruiserPrice_thumb.webp",
     description:
       "A cruiser bicycle, also known as a beach cruiser or (formerly) motobike",
-    price: 1000,
+    price: 3000,
     ratings: 5,
-    bikeType: IBikeTypes.CRUISER
+    bikeType: IBikeTypes.CRUISER,
+    priceRange: PriceRange[1].value
   },
 
   {
@@ -78,9 +85,10 @@ export const products: IProduct[] = [
     imageUrl: "electric_bikes/Image1LQ_00000_x800.webp",
     description:
       "An electric bike, is a bicycle equipped with an motor to assist you .",
-    price: 1000,
+    price: 4000,
     ratings: 4,
-    bikeType: IBikeTypes.ELECTRIC
+    bikeType: IBikeTypes.ELECTRIC,
+    priceRange: PriceRange[1].value
   },
   {
     id: "7",
@@ -89,9 +97,10 @@ export const products: IProduct[] = [
       "folding_bikes/single-speed-folding-bikehummingbird-bike-ltd-129904_2048x.webp",
     description:
       "A folding bike is a bicycle designed to fold into a compact form, for easy transportation and storage.",
-    price: 1000,
+    price: 2000,
     ratings: 5,
-    bikeType: IBikeTypes.FOLDABLE
+    bikeType: IBikeTypes.FOLDABLE,
+    priceRange: PriceRange[1].value
   },
   {
     id: "8",
@@ -99,9 +108,10 @@ export const products: IProduct[] = [
     imageUrl: "folding_bikes/arc-ii-electric-folding-bike-p216-4752_zoom.jpg",
     description:
       "A folding bike is a bicycle designed to fold into a compact form, for easy transportation and storage.",
-    price: 1000,
+    price: 900,
     ratings: 3,
-    bikeType: IBikeTypes.FOLDABLE
+    bikeType: IBikeTypes.FOLDABLE,
+    priceRange: PriceRange[0].value
   }
 ];
 
